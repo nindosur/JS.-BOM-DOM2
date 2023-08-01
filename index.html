@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        .res {
+            margin: 0.5rem 0rem 0.5rem 2px;
+            font-size: 17px;
+            display: flex;
+        }
+
+#colholder {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#container {
+    border: 1px solid rgb(0, 0, 0);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 5px;
+    width: 45px;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    font-size: 40px;
+    padding-left: 2px;
+}
+
+#btnup {
+    border-bottom: 1px solid black;
+}
+
+#btnplace>div {
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#btnplace {
+    border-left: 1px solid black;
+    font-size: 20px;
+}
+
+:focus-visible {
+    outline: -webkit-focus-ring-color auto 0px;
+    border: 1px solid rgba(0, 0, 0, 0.664);
+}
+
+.task .res .resd {
+    margin: 0 10px 0 10px;
+    box-shadow: 0px 0px 8px 1px rgb(0 0 0 / 38%);
+    border-radius: 8px;
+    background-color: white;
+    font-weight: bold;
+    line-height: 1.5;
+    min-width: 6rem;
+    padding: 0 5px 0 5px;
+    display: flex;
+    align-items: center
+}
+
+input {
+    border-radius: 5px;
+    background: #f9f9f9;
+    color: #515151;
+    padding: 4px 7px;
+    margin-bottom: 7px;
+    border: 1px solid #ccc;
+}
+
+
+button {
+    margin-top: 5px;
+    border-radius: 5px;
+    background: #f9f9f9;
+    color: #515151;
+    padding: 2px 7px;
+    margin-bottom: 7px;
+    border: 1px solid #ccc;
+    transition: 300ms;
+}
+
+button:hover {
+    background-color: rgba(158, 158, 158, 0.459);
+    cursor: pointer;
+}
+
+#comtext {
+    display: flex;
+    flex-direction: column
+}
+
+#comtext>textarea {
+    width: 100%;
+    min-height: 100px;
+    resize: none;
+}
+
+#addcom>p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#addcom>button {
+    width: 100%;
+}
+
+#addcom {
+    margin-top: 20px;
+}
+
+#colplace {
+    display: flex;
+}
+
+#colplace>div {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.norm {
+    height: 2px;
+}
+
+.black {
+    background-color: black;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.white {
+    background-color: white;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+    </style>
+</head>
+<body>
+    
+    <div id="exe">
+        <div id=z1 class=task>
+            <h2>
+                Задание 1
+            </h2>
+            <div id="container">
+                <div id="number">0</div>
+                <div id=btnplace>
+                    <div id=btnup>
+                        &#9650;</div>
+                    <div id=btndwn>
+                        &#9660;</div>
+                </div>
+            </div>
+        </div>
+        <div id=z2 class=task>
+            <h2>
+                Задание 2
+            </h2>
+            <button id='z2btn'>Добавить</button>
+            <div id="colholder"></div>
+        </div>
+        <div id=z3 class=task>
+            <h2 id=z3text>
+                Задание 3
+            </h2>
+            <div id=colplace>
+                <div class="red" data-background-color="red"></div>
+                <div class=" blue" data-background-color="blue"></div>
+                <div class="black" data-background-color="black"></div>
+                <div class="white" data-background-color="white"></div>
+                <div class="orange" data-background-color="orange"></div>
+                <div class="yellow" data-background-color="yellow"></div>
+                <div class="purple" data-background-color="purple"></div>
+                <div class="green" data-background-color="green"></div>
+            </div>
+        </div>
+        <div id=z4 class=task>
+            <h2 style="margin-bottom: 20px;">
+                Задание 4
+            </h2>
+            <hr class="norm">
+            <div id="comlist">Нет комментариев</div>
+            <div id="addcom">
+                <p>Оставьте свой комментарий</p>
+                <div>Имя: <input id=z4v1 type="text" placeholder="Введите ваше имя">
+                </div>
+                <div id=comtext>Комментарий <textarea id=z4v2 type="text"
+                        placeholder="Оставьте свой комментарий"></textarea>
+                </div>
+                <button id=z4btn>Оставить комментарий</button>
+            </div>
+        </div>
+        <div id=z5 class=task>
+            <h2>
+                Задание 5
+            </h2>
+            <input id=z5v1 type="text" list="character" placeholder="Укажите город"><datalist id="character">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </datalist>
+
+        </div>
+    </div>
+
+
+<script>
+
+// 1
+function checknum() {
+    if (Number(number.innerHTML) > 9 || Number(number.innerHTML) < 0) {
+        if (Number(number.innerHTML) < -9 || Number(number.innerHTML) > 99) {
+            if (Number(number.innerHTML) < -99 || Number(number.innerHTML) > 999) {
+                container.style.width = 105 + 'px'
+            }
+            else {
+                container.style.width = 90 + 'px'
+            }
+        }
+        else {
+            container.style.width = 75 + 'px'
+        }
+    }
+    else {
+        container.style.width = null
+    }
+}
+
+
+btnup.onclick = function () {
+    number.innerHTML = Number(number.innerHTML) + 1
+    checknum()
+}
+btndwn.onclick = function () {
+    number.innerHTML = Number(number.innerHTML) - 1
+    checknum()
+}
+let appDivcol
+z2btn.onclick = function () {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    let divcol = document.createElement('div');
+    divcol.style.width = '30px';
+    divcol.style.height = '30px';
+    divcol.style.backgroundColor = color
+    divcol.style.cursor = 'pointer';
+    divcol.style.border = '1px solid black';
+    colholder.appendChild(divcol)
+    appDivcol = document.querySelectorAll('#colholder>div')
+    for (item of appDivcol) {
+        item.onclick = function () { this.remove() }
+    }
+}
+let pipet = document.querySelectorAll('#colplace>div')
+for (item of pipet) {
+    item.onclick = function () {
+        z3text.style.color = this.dataset.backgroundColor
+    }
+}
+for (item of document.querySelectorAll('#z4 input')) {
+    item.addEventListener('keypress', function (e) {
+        if (e.key == 'Enter') {
+            rez4(z4v1.value, z4v2.value)
+        }
+    })
+}
+z4btn.onclick = function (e) {
+    rez4(z4v1.value, z4v2.value)
+}
+function rez4(a, b) {
+    if (a !== '' && b !== '') {
+        if (comlist.innerHTML == 'Оставить комментарий') {
+            comlist.innerHTML = ''
+        }
+        let com = document.createElement('div')
+        let name = document.createElement('p')
+        name.style.fontWeight = 'bold'
+        name.style.paddingBottom = '5px'
+        let hr = document.createElement('hr')
+        hr.style.height = 2 + 'px'
+        name.innerHTML = a
+        let date = document.createElement('div')
+        let nowdate = new Date()
+        date.innerHTML = nowdate.toLocaleDateString()
+        date.style.fontSize = '12px'
+        date.style.paddingBottom = '5px'
+        let text = document.createElement('p')
+        text.innerHTML = b
+        com.appendChild(name)
+        com.appendChild(date)
+        com.appendChild(text)
+        com.style.padding = '20px 0 20px 0'
+        comlist.appendChild(com)
+        comlist.appendChild(hr)
+    }
+}
+
+
+let city = ['Пермь', "Саратов", 'Питер', 'Москва', 'Тюмень', 'Казань', 'Екатеринбург', 'Соль-Илецк']
+z5v1.addEventListener('input', function () {
+    for (let i = 0; i < 10; i++) {
+        let b = character.children[i]
+        b.value = ''
+    }
+    if (z5v1.value != '') {
+        let a = city.filter(e => {
+            b = e.toLowerCase()
+            if (b.match(z5v1.value.toLowerCase())) {
+                return e
+            }
+        })
+        console.log(a)
+        for (let i = 0; i < 10; i++) {
+            let b = character.children[i]
+            b.value = a[i]
+        }
+    }
+})
+
+
+
+</script>
+
+</body>
+</html>
